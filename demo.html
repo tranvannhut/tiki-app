@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            https://github.com/tranvannhut/tranvannhut37.github.io.git
+    I. Mở đầu
+React là thư viện của javascript, được xây dựng và phát triển bởi Facebook. React được sử dụng để xây dựng các aplication frontend, đặc biệt đối với các web SPA (Single-page application).
+Redux là một thư viện phổ biến trong các ứng dụng JavaScript (đặc biệt là React). Nó giúp chúng ta quản lý trạng thái state của ứng dụng được xây dựng bằng React.
+II. Xây dựng ứng dụng
+2.1. Mô tả ứng dụng Todo App
+Ứng dụng TodoApp có một số chức năng cơ bản sau:
+- Tạo mới task với input: Nội dung task, deadline của task.
+- Hiển thị danh sách task đã tạo.
+- Thay đổi trạng thái của task: Active/ Complete.
+- Hiển thị các task theo các mục tùy chọn: All/Active/Complete
+- Xóa các task với trạng thái Complete.
+2.2. Xây dựng app
+2.2.1 Chuẩn bị các thư viện
+- Cài đặt node package manager (npm): là một chương trình thư viện quan trọng trong javascript, cho phép download và cài đặt các thư viện, các packed liên quan đến JavaScript.
+- Sử dụng công cụ create-react-app để tạo ra một khung ứng dụng làm việc với React: npx create-react-app my-app.
+- Cài đặt các thư viện cần thiết khác như: react-redux, redux…:  npm install --save redux react-redux
+2.2.2. Tích hợp sử dụng Redux
+Việc tích hợp Redux trong ứng dụng được thực hiện trong file index.js- top level của ứng dung, nơi component App được sử dụng.
+//part2
+Sử dụng function createStore trong thư viện react-redux, để tạo một Redux store với parameter truyền vào là reducer đã được combine.
+Ngoài ra còn có Provider, là một Higher order component(HOC). Khi các component con, được bọc bởi Provider, chúng có thể sử dụng function connect để kết nối đến store của Redux. Vì vậy, Provider thường được đặt ở vị trí top-level trong ứng dụng.
+2.2.3. Xây dựng các chức năng
+Tạo các folder sau trong thư mục src của my-app. Gồm có:
++ actions: với file index.js- là chứa các function trả về các action, define các cách thay đổi state của ứng dụng.
++ components: chứa các component thông thường, các component này không giao tiếp với Redux, chỉ nhận giá trị và thao tác thông qua props và hiển thị views.
+Gồm có các component sau:
+App.js
+Header.js
+….
++ constants: gồm index.js: define các action type có giá trị không thay đổi, được sử dụng trong actions và reducers.
++ containers:  là nơi giao tiếp, connect với store của Redux, quản lý và xử lý dữ liệu của ứng dụng.
+Gồm có:
+HeaderContainer.js: 
+MainContainer.js:  container này chứa hai component là RowList và Footer, để chia sẻ state của store đến các component này, cũng như giúp component thực thi các hàm dispatch các action đến store.
++ Reducers: 
+Một ứng dụng có nhiều chức năng khác nhau, nếu sử dụng chung 1 reducer cho toàn bộ app thì sẽ làm cho State Object rất cồng kềnh. Sử dụng 1 reducer để thay đổi nhiều trạng thái làm cho code của ứng dụng rất phức tạp. Redux hỗ trợ phương thức
+//part3
+combineReducers, xây dựng kết hợp nhiều reducer, với mỗi reducer quản lý một thành phần bên trong state của ứng dụng.
+Todo App gồm có 2 reducer: todos.js: quản lý state cho chức năng thêm task, thay đổi trạng thái active/complete của task.
+filterTodos.js: dùng để quản lý state trạng thái cho chức năng filter All/Active/Complete
+index.js: gộp reducer dùng chung trong store sử dụng phương thức combineReducers của redux
++ Services: với hai function trong file index.js : getCompletedTodoCount và getVisibleTodos. Hai function này làm việc với packed reselect, là một thư viện dành cho Redux, sử dụng kỹ thuật Memoization. Là kỹ thuật lưu kết quả đã tính toán và  sẽ trả về kết quả đã ghi nhớ nếu không có thành phần nào được thay đổi.
+III. Kết Luận
+Bài viết chỉ mới mô tả một phần cơ bản của Redux qua ứng dụng Todo App, ngoài ra có thể tìm thấy rất nhiều thông tin khác tại trang chủ của Redux: redux.js.org, cũng như các ví dụ hoàn chỉnh hơn, tại đây: Redux/examples.
+        </div>
+    </body>
+</html>
