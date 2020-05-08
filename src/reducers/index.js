@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 import getProductRed from './getProductRed'
+import getParamRequest from './getParamRequest'
 const myReducer = combineReducers({
-  getProductRed
+  getProductRed,
+  getParamRequest
 })
 export default myReducer

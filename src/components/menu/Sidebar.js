@@ -6,7 +6,7 @@ class Sidebar extends Component {
     this.props.filterCategoryProduct(id)
   }
   render() {
-    var list = listCategory.map((ele, i) => <li key={i}><CategoryItem category={ele} filterCategory={this.filter} /></li>)
+    var list = listCategory.map((ele, i) => <li key={i}><CategoryItem category={ele} filterCategory={this.filter} setParamRequest={this.props.setParamter} param={this.props.params} /></li>)
     return (
       <React.Fragment>
         <ul className="filter-category">

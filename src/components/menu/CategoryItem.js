@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 
 class CategoryItem extends Component {
+
   onFilter = (id) => {
-    this.props.filterCategory(id)
+    var categoryIds = this.props.param
+    const pageNum = categoryIds['pageNum']
+    this.props.setParamRequest({ categoryId: id, pageNum: pageNum })
+    this.props.filterCategory({ categoryId: id, pageNum: pageNum })
   }
 
   render() {
@@ -20,4 +24,3 @@ class CategoryItem extends Component {
   }
 }
 export default CategoryItem
-/* checked={status}  */

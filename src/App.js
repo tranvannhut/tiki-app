@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import SearchProductCon from './containers/SearchProductCon';
+import GetProductList from './containers/GetProductList';
 import SearchCategory from './containers/SearchCategory';
+import Paging from './containers/Paging';
 
 function App() {
   return (
@@ -12,11 +14,10 @@ function App() {
           <div className="row">
             <div className="side-bar">
               <div className="head">NGÀNH HÀNG QUAN TÂM</div>
-              <SearchCategory />
+              {<SearchCategory />}
             </div>
-            <div className="product-listing">
-            </div>
-
+            <GetProductList />
+            <Paging />
           </div>
         </div>
       </header>

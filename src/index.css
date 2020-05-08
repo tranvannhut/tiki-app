@@ -85,3 +85,273 @@ label {
   vertical-align: top;
   border-radius: 4px;
 }
+
+/* CSS menu Product */
+
+.items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.deal-item {
+  margin-bottom: 20px;
+  padding: 16px;
+  color: #242424;
+  display: inline-block;
+  width: 25%;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+.deal-item:hover {
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  z-index: 1;
+}
+
+.image {
+  padding-top: 0;
+  text-align: center;
+  position: relative;
+  min-height: 200px;
+}
+
+.discount-badge {
+  width: 40px;
+  height: 36px;
+  background-image: url('https://salt.tikicdn.com/desktop/img/deal/price-tag-v2@2x.png');
+  background-size: contain;
+}
+
+.discount-badge {
+  width: 40px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('https://salt.tikicdn.com/desktop/img/deal/price-tag-v2@2x.png');
+  background-size: contain;
+  padding: 0;
+  line-height: 31px;
+  font-weight: 500;
+  z-index: 1;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.title {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.54;
+  color: #242424;
+  overflow: hidden;
+  height: 40px;
+}
+
+.tikicon {
+  vertical-align: middle;
+}
+
+.icon-tikinow {
+  background-image: url('https://salt.tikicdn.com/desktop/img/tiki-now-15@2x.png');
+}
+
+.icon-tikinow {
+  position: relative;
+  display: inline-block;
+  width: 53px;
+  height: 15px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  background-image: url('https://salt.tikicdn.com/desktop/img/tiki-now-15@2x.png');
+  background-size: 53px 15px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.icon-tikinow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  width: 1px;
+  height: 10px;
+  margin-top: -3px;
+  background-color: #D8D8D8;
+}
+
+.price-sale {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #242424;
+  font-weight: 500;
+  padding: 0;
+  text-align: left;
+}
+
+.price-regular {
+  font-size: 11px;
+  color: #a2a2a2;
+  text-decoration: line-through;
+  text-align: left;
+  font-weight: 300;
+  margin-left: 8px;
+}
+
+.deal-status {
+  color: #000;
+  margin-top: 11px;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.process-bar {
+  display: block;
+  width: 111px;
+  height: 18px;
+  background: #FDDAC8;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.process-bar .tikicon {
+  -webkit-filter: brightness(0) invert(100%);
+  filter: brightness(0) invert(100%);
+  position: absolute;
+  top: 2px;
+  left: 3px;
+}
+
+.tikicon.icon-hot_12 {
+  background-image: url('https://salt.tikicdn.com/desktop/img/sprite@2x.png?v=1519811185467');
+  background-position: -283px -327px;
+  width: 12px;
+  height: 12px;
+  background-size: 509px 505px;
+}
+
+.deal-status .process-bar div {
+  min-width: 2px;
+  background: #FD6E23;
+  height: 100%;
+}
+
+.deal-item .deal-status .process-bar .text {
+  font-size: 12px;
+  position: absolute;
+  color: #fff;
+  top: 2px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.deal-item .deal-status .started {
+  font-size: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  font-weight: 400;
+  text-align: right;
+  padding-left: 8px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.time {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/*  CSS for paging */
+
+.list-pager {
+  margin: 20px 0;
+}
+
+.list-pager {
+  margin-top: 15px;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.list-pager ul {
+  list-style: none;
+  margin: 0;
+  text-align: right;
+  padding: 0;
+}
+
+/* ======= pagination ======== */
+
+/* .pagination>li>button, .pagination>li>span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  outline: 0;
+}
+
+.pagination>li>button:hover, .pagination>li>span:hover, .pagination>li>button:focus, .pagination>li>span:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination>li>button.active, .pagination>li>span.active, .pagination>li>button.active:hover, .pagination>li>span.active:hover, .pagination>li>button.active:focus, .pagination>li>span.active:focus {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.pagination>li>span:disabled, .pagination>li>span:disabled:hover, .pagination>li>span:disabled:focus, .pagination>li>button:disabled, .pagination>li>button:disabled:hover, .pagination>li>button:disabled:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.box_pagination_info {
+  font-size: 12px;
+  color: #666;
+  padding-top: 9px;
+}
+
+.box_pagination .pagination {
+  margin-top: 10px;
+}
+
+.box_change_pagelimit {
+  text-align: right;
+}
+
+.box_change_pagelimit .form-control {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70px;
+  margin: 0 5px;
+} */
