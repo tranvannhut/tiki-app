@@ -4,11 +4,11 @@ class Product extends Component {
   render() {
     let { pro } = this.props
     return (
-      <a className="deal-item" target="_blank" href={pro.product.url_path}>
+      <a className="deal-item" target="_blank" rel="noopener noreferrer" href={pro.product.url_path}>
         <div className="image">
           <div className="discount-badge">-{pro.discount_percent}%</div>
           <i className="tikicon icon-tikinow-20"></i>
-          <img className="lazy" src={pro.product.thumbnail_url} style={{ width: "200px", display: "inline" }} />
+          <img className="lazy" src={pro.product.thumbnail_url} style={{ width: "200px", display: "inline" }} alt="img" />
         </div>
         <div className="title"><i className="tikicon icon-tikinow"></i>{pro.product.name}</div>
         <div className="price-sale"> {pro.product.price}₫<span className="price-regular"> {pro.product.list_price}₫</span></div>

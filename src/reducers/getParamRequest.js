@@ -6,9 +6,28 @@ const initParameter = {
 const getParamRequest = (state = initParameter, action) => {
   switch (action.type) {
     case actionTypes.GET_PARAMETER_REQUEST:
-      return { ...action.data }
+      let arr = addParamRequest(action.data)
+      let states = {
+        categoryId: arr.join("%2C"),
+        pageNum: action.data.pageNum
+      }
+      return states
+    case actionTypes.CHANGE_PAGENUM:
+      return action.data
     default: return state
   }
+}
+var array = []
+const addParamRequest = (param) => {
+  if (!param.status) {
+    array.push(param.categoryId)
+  } else {
+    const index = array.indexOf(param.categoryId);
+    if (index > -1) {
+      array.splice(index, 1);
+    }
+  }
+  return array
 }
 
 export default getParamRequest

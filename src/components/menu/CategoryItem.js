@@ -2,21 +2,23 @@ import React, { Component } from "react";
 
 class CategoryItem extends Component {
 
-  onFilter = (id) => {
+  onFilter = (id, status) => {
     var categoryIds = this.props.param
     const pageNum = categoryIds['pageNum']
-    this.props.setParamRequest({ categoryId: id, pageNum: pageNum })
+    this.props.changeStatus(id)
+    this.props.setParamRequest({ categoryId: id, pageNum: pageNum, status: status })
     this.props.filterCategory({ categoryId: id, pageNum: pageNum })
   }
 
   render() {
     var { category_ids, name, status } = this.props.category
+
     return (
       <React.Fragment>
-        <label className="checkbox" onClick={() => this.onFilter(category_ids)}>
-          <input type="checkbox" value={category_ids} />
-          <span className="far fa-square" style={{ display: !status ? "inline-blok" : "none" }}></span>
-          <span className="far fa-check-square" style={{ display: status ? "inline-block" : "none" }}></span>
+        <label className="checkbox" >
+          <input type="checkbox" value={category_ids} checked={status} readOnly />
+          <span className="far fa-square" style={{ display: !status ? "inline-block" : "none" }} onClick={() => this.onFilter(category_ids, status)}></span>
+          <span className="far fa-check-square" style={{ display: status ? "inline-block" : "none" }} onClick={() => this.onFilter(category_ids, status)}></span>
           {name}
         </label>
       </React.Fragment >

@@ -1,8 +1,10 @@
 import { connect } from 'react-redux'
-import { actFetchSearchProduct } from '../actions/getListProduct'
 import Header from '../components/header/Header'
-
-const mapDispatchToProps = (dispatch) => ({
-  getListProduct: (data) => dispatch(actFetchSearchProduct(data))
+import { getTextSearch } from '../actions'
+const mapStateToProps = (state) => ({
+  textSearch: state.getTextSearch
 })
-export default connect(null, mapDispatchToProps)(Header)
+const mapDispatchToProps = (dispatch) => ({
+  getListProduct: (data) => dispatch(getTextSearch(data))
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// eslint-disable-next-line
-import { listCategory } from '../../constants/listCategory'
 import Product from "./Product";
 
 class ProductList extends Component {
@@ -10,21 +8,23 @@ class ProductList extends Component {
       this.props.getDefaultListProduct(data)
     }, 1000);
   }
-  /* componentWillUpdate() {
-    console.log(this.props.listProduct)
-  } */
   render() {
+    console.log(typeof this.props.textSearch)
     var data = this.props.listProduct
     let listProduct = data['data']
-    var x
+
+    var list
     if (!!listProduct) {
-      x = listProduct.map((pro, i) =>
+      if (!!this.props.textSearch) {
+        listProduct = listProduct.filter(ele => ele.product.name.includes(this.props.textSearch))
+      }
+      list = listProduct.map((pro, i) =>
         <Product pro={pro} key={i} />)
     }
     return (
       <div className="product-listing">
         <div className="items">
-          {x}
+          {list}
         </div>
       </div>
 
