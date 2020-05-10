@@ -9,7 +9,6 @@ class ProductList extends Component {
     }, 1000);
   }
   render() {
-    console.log(typeof this.props.textSearch)
     var data = this.props.listProduct
     let listProduct = data['data']
 
@@ -19,7 +18,7 @@ class ProductList extends Component {
         listProduct = listProduct.filter(ele => ele.product.name.includes(this.props.textSearch))
       }
       list = listProduct.map((pro, i) =>
-        <Product pro={pro} key={i} />)
+        <Product pro={pro} key={i} countDownTime={this.props.countDownTime} timeDeadLine={this.props.timeDeadLine} />)
     }
     return (
       <div className="product-listing">

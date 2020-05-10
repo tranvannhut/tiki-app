@@ -14,6 +14,12 @@ const getParamRequest = (state = initParameter, action) => {
       return states
     case actionTypes.CHANGE_PAGENUM:
       return action.data
+    case actionTypes.RESET_LIST_PRODUCT:
+      var resetState = {
+        categoryId: "",
+        pageNum: 1
+      }
+      return resetState
     default: return state
   }
 }
@@ -23,9 +29,7 @@ const addParamRequest = (param) => {
     array.push(param.categoryId)
   } else {
     const index = array.indexOf(param.categoryId);
-    if (index > -1) {
-      array.splice(index, 1);
-    }
+    array.splice(index, 1);
   }
   return array
 }

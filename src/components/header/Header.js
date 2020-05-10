@@ -14,7 +14,7 @@ class Header extends Component {
     return (
       <React.Fragment>
         <nav className="navbar navbar-expand-md bg-primary navbar-dark">
-          <a className="navbar-brand" href="#">Home</a>
+          <span className="navbar-brand" >Home</span>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span className="navbar-toggler-icon"></span>
           </button>

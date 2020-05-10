@@ -13,11 +13,14 @@ function App() {
         <div className="container-fluid">
           <div className="row">
             <div className="side-bar">
-              <div className="head">NGÀNH HÀNG QUAN TÂM</div>
-              {<SearchCategory />}
+              <SearchCategory />
             </div>
             <GetProductList />
-            <Paging />
+          </div>
+          <div className="row">
+            <div className="col-sm-4 offset-sm-8">
+              <Paging />
+            </div>
           </div>
         </div>
       </header>

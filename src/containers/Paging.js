@@ -9,6 +9,6 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToPropss = dispatch => ({
   getProductList: data => dispatch(actFetchCategory(data)),
-  setParamter: data => dispatch(changePageNum(data))
+  setParamter: data => dispatch(changePageNum(data)),
 })
 export default connect(mapStateToProps, mapDispatchToPropss)(PagingList)
