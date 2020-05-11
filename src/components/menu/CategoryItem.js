@@ -5,9 +5,9 @@ class CategoryItem extends Component {
   onFilter = (id, status) => {
     var categoryIds = this.props.param
     const pageNum = categoryIds['pageNum']
-    this.props.filterCategory({ categoryId: id, pageNum: pageNum })
     this.props.changeStatus(id)
-    this.props.setParamRequest({ categoryId: id, pageNum: pageNum, status: status })
+    this.props.setParamRequest({ categoryId: id, pageNum: 1, status: status })
+    this.props.filterCategory({ categoryId: id, pageNum: pageNum })
   }
 
   render() {
